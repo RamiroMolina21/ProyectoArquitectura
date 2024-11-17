@@ -1,0 +1,338 @@
+{
+  "Clientes": [
+    {
+      "_id": 1,
+      "tipoDocumento": "CC",
+      "nombres": "Juan",
+      "apellidos": "Pérez",
+      "telefono": ["3001234567"],
+      "email": "juan.perez@mail.com",
+      "direccion": "Calle 123, Bogotá",
+      "reservas": [
+        {
+          "idReserva": 1,
+          "estadoReserva": "Confirmada",
+          "fechaReserva": "2024-11-16",
+          "horaReserva": "10:00 AM",
+          "servicio": "Tour Bogotá"
+        }
+      ],
+      "pagos": [
+        {
+          "idPago": 1,
+          "metodoPago": "Tarjeta",
+          "monto": 100000
+        }
+      ],
+      "valoraciones": [
+        {
+          "idValoracion": 1,
+          "descripcion": "Excelente servicio",
+          "puntuacion": 5
+        }
+      ]
+    },
+    {
+      "_id": 2,
+      "tipoDocumento": "TI",
+      "nombres": "Ana",
+      "apellidos": "Gómez",
+      "telefono": ["3007654321", "3101234567"],
+      "email": "ana.gomez@mail.com",
+      "direccion": ["Carrera 4 #5-6", "Carrera 8 #7-8"],
+      "reservas": [
+        {
+          "idReserva": 2,
+          "estadoReserva": "Cancelada",
+          "fechaReserva": "2024-11-17",
+          "horaReserva": "11:00 AM",
+          "servicio": "Tour Medellín"
+        }
+      ],
+      "pagos": [
+        {
+          "idPago": 2,
+          "metodoPago": "Efectivo",
+          "monto": 200000
+        }
+      ]
+    }
+  ],
+  "Reservas": [
+    {
+      "_id": 1,
+      "estadoReserva": "Confirmada",
+      "fechaReserva": "2024-11-16",
+      "horaReserva": "10:00 AM",
+      "cliente": "Juan Pérez",
+      "servicio": "Tour Bogotá",
+      "empleado": "Ana López"
+    },
+    {
+      "_id": 2,
+      "estadoReserva": "Cancelada",
+      "fechaReserva": "2024-11-17",
+      "horaReserva": "11:00 AM",
+      "cliente": "Ana Gómez",
+      "servicio": "Tour Medellín",
+      "empleado": "Pedro Martínez"
+    }
+  ],
+  "Pagos": [
+    {
+      "_id": 1,
+      "metodoPago": "Tarjeta",
+      "monto": 100000,
+      "cliente": "Juan Pérez"
+    },
+    {
+      "_id": 2,
+      "metodoPago": "Efectivo",
+      "monto": 200000,
+      "cliente": "Ana Gómez"
+    }
+  ],
+  "Valoraciones": [
+    {
+      "_id": 1,
+      "descripcion": "Excelente servicio",
+      "puntuacion": 5,
+      "cliente": "Juan Pérez"
+    },
+    {
+      "_id": 2,
+      "descripcion": "Buen trato",
+      "puntuacion": 4,
+      "cliente": "Ana Gómez"
+    }
+  ],
+  "Servicios": [
+    {
+      "_id": 1,
+      "nombreServicio": "Tour Bogotá",
+      "agencia": "Agencia Uno",
+      "actividades": [
+        {
+          "idActividad": 1,
+          "nombre": "Caminata Ecológica",
+          "tipoActividad": "Aventura",
+          "fechaInicio": "2024-12-01",
+          "fechaFinal": "2024-12-05"
+        }
+      ]
+    },
+    {
+      "_id": 2,
+      "nombreServicio": "Tour Medellín",
+      "agencia": "Agencia Dos",
+      "actividades": [
+        {
+          "idActividad": 2,
+          "nombre": "Tour en bote",
+          "tipoActividad": "Turismo",
+          "fechaInicio": "2024-01-10",
+          "fechaFinal": "2024-01-15"
+        }
+      ]
+    }
+  ],
+  "Actividades": [
+    {
+      "_id": 1,
+      "nombre": "Caminata Ecológica",
+      "tipoActividad": "Aventura",
+      "fechaInicio": "2024-12-01",
+      "fechaFinal": "2024-12-05",
+      "disponibilidad": "Disponible",
+      "descripcion": "Explora la naturaleza en su máximo esplendor.",
+      "descuentos": [
+        {
+          "idDescuento": 1,
+          "porcentaje": 10
+        }
+      ],
+      "paquetes": [
+        {
+          "idPaquete": 1,
+          "precio": 200000,
+          "disponibilidad": "Disponible",
+          "tipoPaquete": "Familiar"
+        }
+      ]
+    },
+    {
+      "_id": 2,
+      "nombre": "Tour en bote",
+      "tipoActividad": "Turismo",
+      "fechaInicio": "2024-01-10",
+      "fechaFinal": "2024-01-15",
+      "disponibilidad": "Disponible",
+      "descripcion": "Un recorrido espectacular por los canales naturales.",
+      "descuentos": [
+        {
+          "idDescuento": 2,
+          "porcentaje": 15
+        }
+      ]
+    }
+  ],
+  "Promociones": [
+    {
+      "_id": 1,
+      "nombrePromocion": "Descuento 10%",
+      "tipoPromocion": "Online",
+      "descripcion": "10% de descuento por reservas web",
+      "fechaPromocion": "2024-11-01",
+      "servicio": "Tour Bogotá"
+    },
+    {
+      "_id": 2,
+      "nombrePromocion": "Oferta Impresa",
+      "tipoPromocion": "Impresa",
+      "descripcion": "Promoción exclusiva en folletos",
+      "fechaPromocion": "2024-12-01",
+      "servicio": "Tour Medellín"
+    }
+  ],
+  "AgenciaTuristica": [
+    {
+      "_id": 1,
+      "nombre": "Agencia Uno",
+      "ubicacion": "Bogotá",
+      "descripcion": "Líder en tours turísticos por la ciudad.",
+      "servicios": ["Tour Bogotá"],
+      "temporadas": [
+        {
+          "idTemporada": 1,
+          "descripcion": "Temporada alta",
+          "fechaInicio": "2024-01-01",
+          "fechaFinal": "2024-03-31"
+        }
+      ]
+    },
+    {
+      "_id": 2,
+      "nombre": "Agencia Dos",
+      "ubicacion": "Medellín",
+      "descripcion": "Expertos en turismo de aventura.",
+      "servicios": ["Tour Medellín"],
+      "temporadas": [
+        {
+          "idTemporada": 2,
+          "descripcion": "Temporada baja",
+          "fechaInicio": "2024-04-01",
+          "fechaFinal": "2024-06-30"
+        }
+      ]
+    }
+  ],
+  "Proveedores": [
+    {
+      "_id": 1,
+      "nombre": "Proveedor 1",
+      "email": "proveedor1@mail.com",
+      "ubicacion": "Bogotá",
+      "descripcion": "Servicios de transporte y logística turística.",
+      "servicios": ["Tour Bogotá"]
+    },
+    {
+      "_id": 2,
+      "nombre": "Proveedor 2",
+      "email": "proveedor2@mail.com",
+      "ubicacion": "Medellín",
+      "descripcion": "Equipos y soporte para turismo.",
+      "servicios": ["Tour Medellín"]
+    }
+  ],
+  "ServicioProveedor": [
+    {
+      "_id": 1,
+      "tipoServicio": "Transporte",
+      "disponibilidad": "Disponible",
+      "proveedor": "Proveedor 1",
+      "servicio": "Tour Bogotá"
+    },
+    {
+      "_id": 2,
+      "tipoServicio": "Alojamiento",
+      "disponibilidad": "Disponible",
+      "proveedor": "Proveedor 2",
+      "servicio": "Tour Medellín"
+    }
+  ],
+  "Rol": [
+    {
+      "_id": 1,
+      "areaConocimiento": "Atención al cliente"
+    },
+    {
+      "_id": 2,
+      "areaConocimiento": "Ventas"
+    }
+  ],
+  "Paquetes": [
+    {
+      "_id": 1,
+      "precio": 200000,
+      "disponibilidad": "Disponible",
+      "tipoPaquete": "Familiar",
+      "actividad": {
+        "idActividad": 1,
+        "nombre": "Caminata Ecológica"
+      }
+    },
+    {
+      "_id": 2,
+      "precio": 300000,
+      "disponibilidad": "No disponible",
+      "tipoPaquete": "Grupal",
+      "actividad": {
+        "idActividad": 2,
+        "nombre": "Tour en bote"
+      }
+    }
+  ],
+  "Descuentos": [
+    {
+      "_id": 1,
+      "porcentaje": 10,
+      "actividad": {
+        "idActividad": 1,
+        "nombre": "Caminata Ecológica"
+      }
+    },
+    {
+      "_id": 2,
+      "porcentaje": 15,
+      "actividad": {
+        "idActividad": 2,
+        "nombre": "Tour en bote"
+      }
+    }
+  ],
+  "TemporadasTuristicas": [
+    {
+      "_id": 1,
+      "descripcion": "Temporada alta",
+      "fechaInicio": "2024-01-01",
+      "fechaFinal": "2024-03-31",
+      "agenciaTuristica": {
+        "idAgencia": 1,
+        "nombre": "Agencia Uno"
+      }
+    },
+    {
+      "_id": 2,
+      "descripcion": "Temporada baja",
+      "fechaInicio": "2024-04-01",
+      "fechaFinal": "2024-06-30",
+      "agenciaTuristica": {
+        "idAgencia": 2,
+        "nombre": "Agencia Dos"
+      }
+    }
+  ]
+}
+
+  
+  

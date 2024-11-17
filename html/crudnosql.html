@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Completo</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1> Sistema de Gestión</h1>
+        <!-- Clientes -->
+        <section>
+            <h2>Clientes</h2>
+            <div class="form-container">
+                <form id="clientesForm">
+                    <div class="form-group">
+                        <label for="clienteNombres">Nombres:</label>
+                        <input type="text" id="clienteNombres" name="nombres" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="clienteApellidos">Apellidos:</label>
+                        <input type="text" id="clienteApellidos" name="apellidos" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="clienteEmail">Email:</label>
+                        <input type="email" id="clienteEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="clienteTelefono">Teléfono:</label>
+                        <input type="tel" id="clienteTelefono" name="telefono" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn">Guardar</button>
+                        <button type="reset" class="btn btn-secondary">Limpiar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombres</th>
+                            <th>Apellidos</th>
+                            <th>Email</th>
+                            <th>Teléfono</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Juan</td>
+                            <td>Pérez</td>
+                            <td>juan.perez@mail.com</td>
+                            <td>3001234567</td>
+                            <td>
+                                <button class="btn btn-edit">Editar</button>
+                                <button class="btn btn-delete">Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Reservas -->
+        <section>
+            <h2>Reservas</h2>
+            <div class="form-container">
+                <form id="reservasForm">
+                    <div class="form-group">
+                        <label for="reservaEstado">Estado:</label>
+                        <select id="reservaEstado" name="estadoReserva" required>
+                            <option value="">Seleccionar...</option>
+                            <option value="Confirmada">Confirmada</option>
+                            <option value="Cancelada">Cancelada</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="reservaFecha">Fecha:</label>
+                        <input type="date" id="reservaFecha" name="fechaReserva" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reservaHora">Hora:</label>
+                        <input type="time" id="reservaHora" name="horaReserva" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reservaCliente">Cliente:</label>
+                        <input type="text" id="reservaCliente" name="cliente" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn">Guardar</button>
+                        <button type="reset" class="btn btn-secondary">Limpiar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Estado</th>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                            <th>Cliente</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Confirmada</td>
+                            <td>2024-11-16</td>
+                            <td>10:00 AM</td>
+                            <td>Juan Pérez</td>
+                            <td>
+                                <button class="btn btn-edit">Editar</button>
+                                <button class="btn btn-delete">Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section>
+            <h2>Pagos</h2>
+            <div class="form-container">
+                <form id="pagosForm">
+                    <div class="form-group">
+                        <label for="pagoMetodo">Método de Pago:</label>
+                        <select id="pagoMetodo" name="metodoPago" required>
+                            <option value="">Seleccionar...</option>
+                            <option value="Tarjeta">Tarjeta</option>
+                            <option value="Efectivo">Efectivo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="pagoMonto">Monto:</label>
+                        <input type="number" id="pagoMonto" name="monto" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pagoCliente">Cliente:</label>
+                        <input type="text" id="pagoCliente" name="cliente" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn">Guardar</button>
+                        <button type="reset" class="btn btn-secondary">Limpiar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Método</th>
+                            <th>Monto</th>
+                            <th>Cliente</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Tarjeta</td>
+                            <td>100000</td>
+                            <td>Juan Pérez</td>
+                            <td>
+                                <button class="btn btn-edit">Editar</button>
+                                <button class="btn btn-delete">Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section>
+            <h2>Valoraciones</h2>
+            <div class="form-container">
+                <form id="valoracionesForm">
+                    <div class="form-group">
+                        <label for="valoracionDescripcion">Descripción:</label>
+                        <textarea id="valoracionDescripcion" name="descripcion" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="valoracionPuntuacion">Puntuación:</label>
+                        <select id="valoracionPuntuacion" name="puntuacion" required>
+                            <option value="">Seleccionar...</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="valoracionCliente">Cliente:</label>
+                        <input type="text" id="valoracionCliente" name="cliente" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn">Guardar</button>
+                        <button type="reset" class="btn btn-secondary">Limpiar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Descripción</th>
+                            <th>Puntuación</th>
+                            <th>Cliente</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Excelente servicio</td>
+                            <td>5</td>
+                            <td>Juan Pérez</td>
+                            <td>
+                                <button class="btn btn-edit">Editar</button>
+                                <button class="btn btn-delete">Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section>
+            <h2>Servicios</h2>
+            <div class="form-container">
+                <form id="serviciosForm">
+                    <div class="form-group">
+                        <label for="servicioNombre">Nombre del Servicio:</label>
+                        <input type="text" id="servicioNombre" name="nombreServicio" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="servicioAgencia">Agencia:</label>
+                        <input type="text" id="servicioAgencia" name="agencia" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn">Guardar</button>
+                        <button type="reset" class="btn btn-secondary">Limpiar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Agencia</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Tour Bogotá</td>
+                            <td>Agencia Uno</td>
+                            <td>
+                                <button class="btn btn-edit">Editar</button>
+                                <button class="btn btn-delete">Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Actividades</h2>
+            <div class="form-container">
+                <form id="actividadesForm">
+                    <div class="form-group">
+                        <label for="actividadNombre">Nombre de la Actividad:</label>
+                        <input type="text" id="actividadNombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="actividadTipo">Tipo:</label>
+                        <input type="text" id="actividadTipo" name="tipoActividad" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="actividadFechaInicio">Fecha de Inicio:</label>
+                        <input type="date" id="actividadFechaInicio" name="fechaInicio" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="actividadFechaFinal">Fecha Final:</label>
+                        <input type="date" id="actividadFechaFinal" name="fechaFinal" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn">Guardar</button>
+                        <button type="reset" class="btn btn-secondary">Limpiar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Tipo</th>
+                            <th>Fecha Inicio</th>
+                            <th>Fecha Final</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Caminata Ecológica</td>
+                            <td>Aventura</td>
+                            <td>2024-12-01</td>
+                            <td>2024-12-05</td>
+                            <td>
+                                <button class="btn btn-edit">Editar</button>
+                                <button class="btn btn-delete">Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section>
+            <h2>Promociones</h2>
+            <div class="form-container">
+                <form id="promocionesForm">
+                    <div class="form-group">
+                        <label for="promocionNombre">Nombre de la Promoción:</label>
+                        <input type="text" id="promocionNombre" name="nombrePromocion" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="promocionTipo">Tipo:</label>
+                        <input type="text" id="promocionTipo" name="tipoPromocion" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="promocionDescripcion">Descripción:</label>
+                        <textarea id="promocionDescripcion" name="descripcion" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="promocionFecha">Fecha:</label>
+                        <input type="date" id="promocionFecha" name="fechaPromocion" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn">Guardar</button>
+                        <button type="reset" class="btn btn-secondary">Limpiar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Tipo</th>
+                            <th>Descripción</th>
+                            <th>Fecha</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Descuento 10%</td>
+                            <td>Online</td>
+                            <td>10% de descuento por reservas web</td>
+                            <td>2024-11-01</td>
+                            <td>
+                                <button class="btn btn-edit">Editar</button>
+                                <button class="btn btn-delete">Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section id="proveedores">
+            <h2>Proveedores</h2>
+            <div class="form-container">
+                <form>
+                    <div class="form-group">
+                        <label for="proveedorNombre">Nombre</label>
+                        <input type="text" id="proveedorNombre" placeholder="Ingrese el nombre del proveedor">
+                    </div>
+                    <div class="form-group">
+                        <label for="proveedorEmail">Email</label>
+                        <input type="email" id="proveedorEmail" placeholder="Ingrese el email del proveedor">
+                    </div>
+                    <div class="form-group">
+                        <label for="proveedorUbicacion">Ubicación</label>
+                        <input type="text" id="proveedorUbicacion" placeholder="Ingrese la ubicación del proveedor">
+                    </div>
+                    <div class="form-group">
+                        <label for="proveedorDescripcion">Descripción</label>
+                        <textarea id="proveedorDescripcion" placeholder="Describa los servicios ofrecidos"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="proveedorServicios">Servicios</label>
+                        <input type="text" id="proveedorServicios" placeholder="Ingrese los servicios ofrecidos">
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn">Agregar</button>
+                        <button type="reset" class="btn-secondary">Limpiar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Ubicación</th>
+                            <th>Descripción</th>
+                            <th>Servicios</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Proveedor 1</td>
+                            <td>proveedor1@mail.com</td>
+                            <td>Bogotá</td>
+                            <td>Servicios de transporte y logística turística.</td>
+                            <td>Tour Bogotá</td>
+                            <td>
+                                <button class="btn-edit">Editar</button>
+                                <button class="btn-delete">Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section id="empleados">
+            <h2>Empleados</h2>
+            <div class="form-container">
+                <form>
+                    <div class="form-group">
+                        <label for="empleadoNombre">Nombre</label>
+                        <input type="text" id="empleadoNombre" placeholder="Ingrese el nombre del empleado">
+                    </div>
+                    <div class="form-group">
+                        <label for="empleadoRol">Rol</label>
+                        <select id="empleadoRol">
+                            <option value="atencion">Atención al cliente</option>
+                            <option value="ventas">Ventas</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="empleadoUbicacion">Ubicación</label>
+                        <input type="text" id="empleadoUbicacion" placeholder="Ingrese la ubicación del empleado">
+                    </div>
+                    <div class="form-group">
+                        <label for="empleadoEmail">Email</label>
+                        <input type="email" id="empleadoEmail" placeholder="Ingrese el email del empleado">
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn">Agregar</button>
+                        <button type="reset" class="btn-secondary">Limpiar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Rol</th>
+                            <th>Ubicación</th>
+                            <th>Email</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ana López</td>
+                            <td>Atención al cliente</td>
+                            <td>Bogotá</td>
+                            <td>ana.lopez@mail.com</td>
+                            <td>
+                                <button class="btn-edit">Editar</button>
+                                <button class="btn-delete">Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+                
+    </div>
+</body>
+</html>
+
+
+
+    
+

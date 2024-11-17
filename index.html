@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Base de Datos NoSQL</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      margin: 20px;
+    }
+    pre {
+      background-color: #f4f4f4;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Base de Datos NoSQL</h1>
+    <h2><a href="html/crudnosql.html" target="_blank">CRUD NoSQL</a></h2>
+    <div id="output"></div>
+  </div>
+
+  <script>
+    // Carga y muestra el archivo JSON
+    fetch('basededatos.json')
+      .then(response => response.json())
+      .then(data => {
+        const output = document.getElementById('output');
+        output.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+      })
+      .catch(error => console.error('Error al cargar el archivo JSON:', error));
+  </script>
+</body>
+</html>
